@@ -16,6 +16,11 @@ class Battlefield:
     def display_welcome(self):
         print("This is END GAME")
 
+    def game_start(self):    
+        user = input("Ready to fight for survival? Enter y or n.")
+        if(user == "y"):
+            print("**Game Starts**")
+
     def battle(self,turn): 
         if(turn == 1 or turn == 3):
             self.battle = True
