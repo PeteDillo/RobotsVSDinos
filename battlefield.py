@@ -66,3 +66,9 @@ class Battlefield:
         for robot in self.fleet.robots:
             print(f"Press {robot_index} for {robot.name}")
             robot_index += 1        
+
+    def display_winners(self): 
+        if self.dino1_battle_ready == 0 and self.dino2_battle_ready.health == 0 and self.dino3_battle_ready.health == 0:
+            print("The Dinosaurs are now EXTINCT! Robots WIN!")
+        if self.robot1_battle_ready.health == 0 and self.robot2_battle_ready.health == 0 and self.robot3_battle_ready.health == 0:
+            print("The Robots are done for! Dinosaurs WIN!")        
