@@ -1,14 +1,8 @@
-from robot import Robot
-
-
-import random
-
 class Dinosaur:
-    def __init__(self, name):
+    def __init__(self, name, attack_pwr):
         self.name = name
-        self.attack_pwr = 200
-        self.health = 300
+        self.attack_pwr = attack_pwr
+        self.health = 200
 
     def attack(self, robot):
         robot.health -= self.attack_pwr
-        

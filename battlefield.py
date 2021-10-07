@@ -39,12 +39,6 @@ class Battlefield:
         else:
             robo_turn()        
 
-    def show_dino_opponent_options(self): 
-        dino_index = 0
-        for dino in self.herd.dinosaurs:
-            print(f"Press {dino_index} for {dino.name}")
-            dino_index += 1        
-
 
     def robo_turn(self): 
         print("Choose the robot who will attack:")
@@ -60,6 +54,12 @@ class Battlefield:
         else:
             dino_turn()    
 
+    def show_dino_opponent_options(self): 
+        dino_index = 0
+        for dino in self.herd.dinosaurs:
+            print(f"Press {dino_index} for {dino.name}")
+            dino_index += 1        
+
 
     def show_robo_opponent_options(self): 
         robot_index = 0
@@ -69,6 +69,6 @@ class Battlefield:
 
     def display_winners(self): 
         if self.dino1_battle_ready == 0 and self.dino2_battle_ready.health == 0 and self.dino3_battle_ready.health == 0:
-            print("The Dinosaurs are now EXTINCT! Robots WIN!")
+            print("The Dinosaurs went EXTINCT! Robots WIN!")
         if self.robot1_battle_ready.health == 0 and self.robot2_battle_ready.health == 0 and self.robot3_battle_ready.health == 0:
-            print("The Robots are done for! Dinosaurs WIN!")        
+            print("The Robots are DEAD! Dinosaurs WIN!")        
