@@ -38,3 +38,31 @@ class Battlefield:
             self.fleet.robots.remove(self.fleet.robots[robot_champion])
         else:
             robo_turn()        
+
+    def show_dino_opponent_options(self): 
+        dino_index = 0
+        for dino in self.herd.dinosaurs:
+            print(f"Press {dino_index} for {dino.name}")
+            dino_index += 1        
+
+
+    def robo_turn(self): 
+        print("Choose the robot who will attack:")
+        self.show_robo_opponent_options()
+        robot_champion = int(input())
+        print("Choose the dinosaur who will defend:")
+        self.show_dino_opponent_options()
+        dino_champion = int(input())
+        self.fleet.robots[robot_champion].attack(self.herd.dinosaurs[dino_champion])
+        if self.herd.dinosaurs[dino_champion].health <= 0:
+            print(f"{self.herd.dinosaurs[dino_champion]} has fainted")
+            self.herd.dinosaurs.remove(self.herd.dinosaurs[dino_champion])
+        else:
+            dino_turn()    
+
+
+    def show_robo_opponent_options(self): 
+        robot_index = 0
+        for robot in self.fleet.robots:
+            print(f"Press {robot_index} for {robot.name}")
+            robot_index += 1        
