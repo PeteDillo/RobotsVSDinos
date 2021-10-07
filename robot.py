@@ -7,4 +7,4 @@ class Robot:
         self.health = 200
 
     def attack(self,dinosaur):
-        dinosaur.health -= self.weapon
+        dinosaur.health -= self.weapon.attack_pwr

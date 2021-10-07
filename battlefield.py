@@ -16,9 +16,9 @@ class Battlefield:
 
     def battle(self): 
         while len(self.herd.dinosaurs) != 0 or len(self.fleet.robots) != 0:
-            self.herd.dinosaurs.dino_turn()
-            self.fleet.robots.robo_turn()
-        display_winners()
+            self.dino_turn()
+            self.robo_turn()
+        self.display_winners()
 
 
 
@@ -67,7 +67,7 @@ class Battlefield:
         if self.robot1_battle_ready.health == 0 and self.robot2_battle_ready.health == 0 and self.robot3_battle_ready.health == 0:
             print("The Robots are DEAD! Dinosaurs WIN!")   
 
-    def run_game(self);
+    def run_game(self):
         self.display_welcome()
         self.game_start()
         self.robot0_battle = self.fleet.robots[0]
