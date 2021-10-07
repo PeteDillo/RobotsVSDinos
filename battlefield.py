@@ -21,13 +21,13 @@ class Battlefield:
         if(user == "y"):
             print("**Game Starts**")
 
-    def battle(self,turn): 
-        if(turn == 1 or turn == 3):
-            self.battle = True
-        elif(turn == 2 or turn == 4):
-            self.battle = False
-        else:
-            print("Illegal turn")
+    # def battle(self,turn): 
+    #     if(turn == 1 or turn == 3):
+    #         self.battle = True
+    #     elif(turn == 2 or turn == 4):
+    #         self.battle = False
+    #     else:
+    #         print("Illegal turn")
 
 
     def dino_turn(self):
@@ -39,7 +39,7 @@ class Battlefield:
         robot_champion = int(input())
         self.herd.dinosaurs[dino_champion].attack(self.fleet.robots[robot_champion])
         if self.fleet.robots[robot_champion].health <= 0:
-            print(f"{self.fleet.robots[robot_champion]} has fainted")
+            print(f"{self.fleet.robots[robot_champion].name} has fainted")
             self.fleet.robots.remove(self.fleet.robots[robot_champion])
         else:
             robo_turn()        
@@ -54,7 +54,7 @@ class Battlefield:
         dino_champion = int(input())
         self.fleet.robots[robot_champion].attack(self.herd.dinosaurs[dino_champion])
         if self.herd.dinosaurs[dino_champion].health <= 0:
-            print(f"{self.herd.dinosaurs[dino_champion]} has fainted")
+            print(f"{self.herd.dinosaurs[dino_champion].name} has fainted")
             self.herd.dinosaurs.remove(self.herd.dinosaurs[dino_champion])
         else:
             dino_turn()    

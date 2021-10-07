@@ -9,9 +9,9 @@ class Fleet:
         self.make_fleet()
 
     def weapon_create(self):
-        weapon0 = Weapon("The Laser Sword",50)
-        weapon1 = Weapon("The Sword That Shoots Lasers",50)
-        weapon2 = Weapon("The Sword Laser",50)
+        weapon0 = Weapon("The Laser Sword", 50)
+        weapon1 = Weapon("The Sword That Shoots Lasers", 50)
+        weapon2 = Weapon("The Sword Laser", 50)
         self.armory.append(weapon0)
         self.armory.append(weapon1)
         self.armory.append(weapon2)
