@@ -23,3 +23,18 @@ class Battlefield:
             self.battle = False
         else:
             print("Illegal turn")
+
+
+    def dino_turn(self):
+        print("Choose your dinosaur to attack:")
+        self.show_dino_opponent_options()
+        dino_champion = int(input())
+        print("Choose the robot that'll defend:")
+        self.show_robo_opponent_options()
+        robot_champion = int(input())
+        self.herd.dinosaurs[dino_champion].attack(self.fleet.robots[robot_champion])
+        if self.fleet.robots[robot_champion].health <= 0:
+            print(f"{self.fleet.robots[robot_champion]} has fainted")
+            self.fleet.robots.remove(self.fleet.robots[robot_champion])
+        else:
+            robo_turn()        
